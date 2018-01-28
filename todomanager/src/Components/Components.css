@@ -1,0 +1,16 @@
+
+.filters .active{
+    text-decoration : underline;
+    color : blue
+}
+
+
+.completed {
+    text-decoration:line-through;
+    color : gray;
+}
+
+.pending {
+    text-decoration : none;
+    color : blue
+}
