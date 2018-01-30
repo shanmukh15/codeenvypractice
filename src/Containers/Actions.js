@@ -12,7 +12,7 @@ export const actionTypes = {
                              ADD_TODO : "ADD_TODO", 
                              DEL_TODO : "DELETE_TODO",
                              TOGGLE_TODO : "TOGGLE_TODO",
-                             CHANGE_FILTER : "CHANGE_FILTER" 
+                             CHANGE_FILTER : "CHANGE_FILTER",
                             };
 
 export function addTodo(text) {
