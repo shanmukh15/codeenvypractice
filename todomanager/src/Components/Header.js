@@ -1,9 +1,5 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 
-export default class Header extends Component {
-    render() {
-        return(<h3> Manage Your Todos </h3>);
-    }
-}
+export const Header = () => (<h3> Manage Your Todos </h3>);
 

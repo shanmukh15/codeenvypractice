@@ -13,14 +13,14 @@ function manageToDo(state = [], action) {
                 
         case actionTypes.TOGGLE_TODO :
                 return state.map((todo) => {
-                    if(todo.id=== action.id){
+                    if(todo.id === action.id){
                         return Object.assign({}, todo, {done : !done});
                     }
                     return todo;
                 });
                         
         default :
-            return state;
+                return state;
     }
 }
 
@@ -34,6 +34,6 @@ function manageFilter(state = "All",action) {
 
 }
 
-export const myreducer = combineReducers({a : manageToDo, b : manageFilter});
+export const myReducer = combineReducers({todos : manageToDo, currentFilter : manageFilter});
 
 export const myStore = createStore(myreducer);

@@ -1,3 +1,11 @@
+
+const gen = function* generator() {
+  let counter=0;
+  while(1) yield ++counter;
+}
+
+const counter = gen();
+
 export const filter = ["All", "Completed", "Pending"];
 
 export const actionTypes = {
@@ -7,8 +15,8 @@ export const actionTypes = {
                              CHANGE_FILTER : "CHANGE_FILTER" 
                             };
 
-export function addTodo(text,id) {
-    return {type : actionTypes.ADD_TODO, text : text, current_id : id};    
+export function addTodo(text) {
+    return {type : actionTypes.ADD_TODO, text : text, current_id : counter.next()};    
 }
 
 export function deleteTodo(id) {
