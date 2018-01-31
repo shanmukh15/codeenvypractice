@@ -1,22 +1,18 @@
-import React, {Component} from 'react';
-import Filters from './Filters';
+import React from 'react';
+import {Filters} from './Filters';
 import {connect} from 'react-redux';
-import 
-class Footer extends Component {
-    render() {
-        return(
-            <div>Count : 4 &nbsp;&nbsp;&nbsp; <Filters /> &nbsp;&nbsp;&nbsp; Shanmukh  </div>);
-    }
-}
+import {changeVisibility} from '../Containers/Actions';
+
+const Foot = (props) => (<div> Count : 4 &nbsp;&nbsp;&nbsp; <Filters  {...props}/> &nbsp;&nbsp;&nbsp; Shanmukh  </div>);
 
 
 const mapStatetoProps = state => {
+console.log(state.currentFilter);
     return {filter : state.currentFilter};
 }
 
-const mapStatetoProps = dispatch => {
-    return dispatch();
+const mapDispatchtoProps = dispatch => {
+    return {handler : filter => dispatch(changeVisibility(filter))};
 }
 
-export const Footer = connect(mapStatetoProps,mapDispatchtoProps)(Footer) ;
-
+export const Footer = connect(mapStatetoProps,mapDispatchtoProps)(Foot) ;

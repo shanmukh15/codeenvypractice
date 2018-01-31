@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 import './App.css';
 import {Header} from './Components/Header';
-import Footer from './Components/Footer';
+import {Footer} from './Components/Footer';
 
 import AddToDo from './Components/AddToDo';
-import {ToDoList} from './Components/ToDoList';
+import {ToDoListContainer} from './Components/ToDoListContainer';
 
 import { Card, CardHeader, CardBody, CardTitle, CardFooter } from 'reactstrap';
-  
+import {myStore} from './Containers/Reducers';
+import {Provider} from 'react-redux';
 
 class App extends Component {
   render() {
     return (
+      <Provider store={myStore} >
       <Card>
         <CardHeader>
              <Header />
@@ -19,10 +21,11 @@ class App extends Component {
         <CardBody>
             <CardTitle>Get on this List </CardTitle>
             <AddToDo />
-            <ToDoList />
+            <ToDoListContainer />
         </CardBody>
         <CardFooter><Footer /> </CardFooter>
       </Card>
+      </Provider>
     );
   }
 }
